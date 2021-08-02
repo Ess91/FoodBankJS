@@ -1,89 +1,63 @@
-const url = "https://www.givefood.org.uk/api/2/foodbanks/search/?address=Bexhill-on-Sea";
+const main = document.getElementById('searchresults');
 
-// fetch(url)
-// .then(response => response.json())
-// .then(data => console.log(data));
+const form = document.getElementById("searchForm");
+form.addEventListener("submit", handleSubmit);
 
-fetch(url)
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
-    appendData(data);
-  })
-  .catch(function (err) {
-    console.log(err);
-  });
 
-function appendData(data) {
-    var mainContainer = document.getElementById("searchresults");
-    for (let index = 0; index < 6; index++) {
-      var div = document.createElement("div");
-      div.innerHTML = `<h3>${data[0].address}</h3>`
-      
-      
-      
-    // div.innerHTML = 'Name: ' + data[i].address;
-      mainContainer.appendChild(div);
+
+function searchFoodBank(query) {
+
+    const API_URL = `https://www.givefood.org.uk/api/2/foodbanks/search/?address=${query}`;
+
+    // Get FoodBank Data
+    getFoodBanks(API_URL)
+
+    async function getFoodBanks(API_URL) {
+        const res = await fetch(API_URL)
+        const data = await res.json()
+
+        showFoodBanks(data);
+
+        // console.log(data);
     }
-
-  
-  }
-
- 
+}
 
 
+function showFoodBanks(banks) {
 
-// function searchFoodBank(query) {
+    main.innerHTML = ''
 
-//     const url = `https://www.givefood.org.uk/api/2/locations/search/?address=${query}`;
-
-//     fetch(url)
-//         .then(response => response.json())
-//         .then((foodData) => {
-//             const results = foodData.map(element => [element.foodbank.network + " " + "-" + " " + element.address]
-           
-//             );
-     
-//             renderResults(results);
-
-//         })
+    banks.forEach((bank) => {
+        const { name, address, phone, homepage, email } = bank
 
 
-// }
+        const bankElement = document.createElement('div')
+        bankElement.classList.add('movie')
 
+        bankElement.innerHTML = `
+          
+            <div class="foodbank-info">
+          <h5>${name}</h5>
+          <p class="address">${address}</p>
+          <p>${phone}</p>
+        
+        
+            </div>
+        `
 
+        main.appendChild(bankElement)
+    })
+}
 
-// function renderResults(results) {
-
-//     const list = document.getElementById("searchresults")
-//     list.innerHTML = "";
-//     results.forEach(result => {
-//         const element = document.createElement("p");
-       
-
-//         // element.innerText = result;
-//         element.innerHTML = result;
-
-
-//         list.appendChild(element);
-
-//     })
-
-  
-//     }
+function handleSubmit(event) {
+    event.preventDefault(); //Prevent page from reloading, have control over it!
+    const foodBankInput = document.getElementById("searchField");
+    searchFoodBank(foodBankInput.value)
+}
 
 
 
 
-// function handleSubmit(event) {
-//     event.preventDefault(); //Prevent page from reloading, have control over it!
-//     const foodBankInput = document.getElementById("searchField");
-//     searchFoodBank(foodBankInput.value)
-// }
 
-// const main = document.getElementById('searchresults')
 
-// const form = document.getElementById("searchForm");
-// form.addEventListener("submit", handleSubmit);
 

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Bank | Get Support</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@300&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="./img/Temporary_Food_Bank_Logo.svg">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
+        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+ 
+
+       
+</head>
+
+<body>
+    <header class="header">
+        <nav>
+            <!-- <a href="index.html"><img src="./img/Temporary_Food_Bank_Logo.svg" alt="" class="logo" width="60"></a> -->
+            <input class="menu-btn" type="checkbox" id="menu-btn" />
+            <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+            <ul class="menu">
+                <li><a href="itworks.html">How It Works</a></li>
+                <li><a href="givesupport.html">Give Support</a></li>
+                <li><a href="getsupport.html">Get Support</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <div class="container">
+        <section>
+
+            <h1>Get Support</h1>
+            <img class="images" src="img/nico-smit-NFoerQuvzrs-unsplash-mobile.jpg" alt="Grocery Bag">
+
+
+
+
+            <form id="searchForm"> 
+                <!-- action to call the validate form -->
+
+
+                <div class="form-group">
+
+
+
+
+                    <div class="row">
+                        <div class="col">
+                            <input type="text" id="searchField" placeholder="Postcode Search" autocomplete="off">
+                            <input type="submit" id="searchBtn" value="Submit">
+                            <input type="button" value="Current Location" id="currentBtn">
+                        </div>
+                    </div>
+
+
+
+
+
+                </div>
+
+            </form>
+
+
+
+
+
+
+            <p class="getinfo">
+                This is a list of the nearest Food Banks closest to you.
+                Please call ahead to check opening hours.
+            </p>
+            <br>
+            <br>
+
+
+            <div id="searchresults">
+                <p class="address"></p>
+                <!-- <h5 class="foodbank-name"></h5>
+                <p class="address"></p>
+                <p class="phone-number"></p>
+                <p class="website"></p>
+                <p class="email"></p>
+                <br>
+
+                <br>
+
+                <small id="charity-id"><strong>Charity Registration ID:</strong></small> -->
+
+
+
+            </div>
+
+
+        </section>
+    </div>
+    </form>
+    </section>
+    </div>
+    <br>
+    <br>
+    <footer>
+        <div class="bottom">
+            <p>Copyright &#0169 2021. <a href="#">A Group &#8470 04 Project</a> &#10803 made by Esther Agyare-Boateng,
+                Jamie Farrell-More & Sofia Kakembo &#10803</p>
+        </div>
+        <br>
+    </footer>
+</body>
+<script src="api.js"></script>
+
+</html>

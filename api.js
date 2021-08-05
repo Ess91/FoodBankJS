@@ -9,6 +9,8 @@ function searchFoodBank(query) {
 
     const API_URL = `https://www.givefood.org.uk/api/2/foodbanks/search/?address=${query}`;
 
+    
+
     // Get FoodBank Data
     getFoodBanks(API_URL)
 
@@ -18,9 +20,13 @@ function searchFoodBank(query) {
 
         showFoodBanks(data);
 
-        // console.log(data);
+        // console.log(data[0].name);
+
+       
     }
 }
+
+
 
 
 function showFoodBanks(banks) {
@@ -28,18 +34,21 @@ function showFoodBanks(banks) {
     main.innerHTML = ''
 
     banks.forEach((bank) => {
-        const { name, address, phone, homepage, email } = bank
+        const { name, address, phone, urls:{homepage}, email } = bank
+        
 
 
         const bankElement = document.createElement('div')
-        bankElement.classList.add('movie')
+      
 
         bankElement.innerHTML = `
           
-            <div class="foodbank-info">
+            <div class="foodbank-card">
           <h5>${name}</h5>
           <p class="address">${address}</p>
           <p>${phone}</p>
+          <a href = "${homepage}">Visit Website</a>
+          <a href = "mailto:${email}">${email}</a>
         
         
             </div>

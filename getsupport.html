@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Food Bank | Get Support</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +16,16 @@
     <link rel="shortcut icon" type="image/jpg" href="./img/Temporary_Food_Bank_Logo.svg">
     <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+
+
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin=""/>
+
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
 
 
 
@@ -45,16 +55,9 @@
             <img class="images" src="img/davor-nisevic-qPK8zLIeNiU-unsplash.jpg" alt="Grocery Bag">
 
 
-
-
             <form id="searchForm">
-                <!-- action to call the validate form -->
-
 
                 <div class="form-group">
-
-
-
 
                     <div class="row">
                         <div class="col">
@@ -65,16 +68,9 @@
                     </div>
 
 
-
-
-
                 </div>
 
             </form>
-
-
-
-
 
 
             <p class="getinfo">
@@ -86,15 +82,10 @@
             <br>
             <br>
 
-            <div class="row">
-                <div class="col">
+            
                     <div id="searchresults"></div>
-                </div>
+               
 
-                <div class="col">
-                    <div class="map"></div>
-                </div>
-            </div>
 
 
 
@@ -103,15 +94,20 @@
     </form>
     <br>
     <br>
-    <footer>
+    <!-- <footer>
         <div class="bottom">
             <p>Copyright &#0169 2021. <a href="#">A Group &#8470 04 Project</a> &#10803 made by Esther Agyare-Boateng,
                 Jamie Farrell-More & Sofia Kakembo &#10803</p>
         </div>
         <br>
-    </footer>
+    </footer> -->
+
+
+   <div id="mapid"></div>
+    
+
 </body>
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+
 <script src="api.js"></script>
 
 </html>
